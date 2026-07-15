@@ -1,11 +1,11 @@
 
-import Header from "@/components/ui/landing/Header";
-import Hero from "@/components/ui/landing/Hero";
-import HowItWorks from "@/components/ui/landing/HowItWorks";
-import PricingSection from "@/components/ui/landing/PricingSection";
-import CTA from "@/components/ui/landing/CTA";
-import Footer from "@/components/ui/landing/Footer";
-import WhatToAsk from "@/components/ui/landing/WhatToAsk";  
+import Header from "@/components/landing/Header";
+import Hero from "@/components/landing/Hero";
+import HowItWorks from "@/components/landing/HowItWorks";
+import PricingSection from "@/components/landing/PricingSection";
+import CTA from "@/components/landing/CTA";
+import Footer from "@/components/landing/Footer";
+import WhatToAsk from "@/components/landing/WhatToAsk";  
 import { redirect } from "next/navigation";
 import { currentUser } from "@clerk/nextjs/server";
 export default async function asyncHome() {
