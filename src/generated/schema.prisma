@@ -30,17 +30,17 @@ model User {
 }
 
 model Doctor {
-  id        String   @id @default(cuid())
-  name      String
-  email     String   @unique
-  phone     String?
-  specialty String
-  bio       String?
-  imageUrl  String
-  gender    Gender
-  isActive  Boolean  @default(true)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id         String   @id @default(cuid())
+  name       String
+  email      String   @unique
+  phone      String?
+  speciality String
+  bio        String?
+  imageUrl   String
+  gender     Gender
+  isActive   Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 
   appointments Appointment[]
 

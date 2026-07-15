@@ -2256,7 +2256,7 @@ export namespace Prisma {
     name: string | null
     email: string | null
     phone: string | null
-    specialty: string | null
+    speciality: string | null
     bio: string | null
     imageUrl: string | null
     gender: $Enums.Gender | null
@@ -2270,7 +2270,7 @@ export namespace Prisma {
     name: string | null
     email: string | null
     phone: string | null
-    specialty: string | null
+    speciality: string | null
     bio: string | null
     imageUrl: string | null
     gender: $Enums.Gender | null
@@ -2284,7 +2284,7 @@ export namespace Prisma {
     name: number
     email: number
     phone: number
-    specialty: number
+    speciality: number
     bio: number
     imageUrl: number
     gender: number
@@ -2300,7 +2300,7 @@ export namespace Prisma {
     name?: true
     email?: true
     phone?: true
-    specialty?: true
+    speciality?: true
     bio?: true
     imageUrl?: true
     gender?: true
@@ -2314,7 +2314,7 @@ export namespace Prisma {
     name?: true
     email?: true
     phone?: true
-    specialty?: true
+    speciality?: true
     bio?: true
     imageUrl?: true
     gender?: true
@@ -2328,7 +2328,7 @@ export namespace Prisma {
     name?: true
     email?: true
     phone?: true
-    specialty?: true
+    speciality?: true
     bio?: true
     imageUrl?: true
     gender?: true
@@ -2415,7 +2415,7 @@ export namespace Prisma {
     name: string
     email: string
     phone: string | null
-    specialty: string
+    speciality: string
     bio: string | null
     imageUrl: string
     gender: $Enums.Gender
@@ -2446,7 +2446,7 @@ export namespace Prisma {
     name?: boolean
     email?: boolean
     phone?: boolean
-    specialty?: boolean
+    speciality?: boolean
     bio?: boolean
     imageUrl?: boolean
     gender?: boolean
@@ -2462,7 +2462,7 @@ export namespace Prisma {
     name?: boolean
     email?: boolean
     phone?: boolean
-    specialty?: boolean
+    speciality?: boolean
     bio?: boolean
     imageUrl?: boolean
     gender?: boolean
@@ -2476,7 +2476,7 @@ export namespace Prisma {
     name?: boolean
     email?: boolean
     phone?: boolean
-    specialty?: boolean
+    speciality?: boolean
     bio?: boolean
     imageUrl?: boolean
     gender?: boolean
@@ -2490,7 +2490,7 @@ export namespace Prisma {
     name?: boolean
     email?: boolean
     phone?: boolean
-    specialty?: boolean
+    speciality?: boolean
     bio?: boolean
     imageUrl?: boolean
     gender?: boolean
@@ -2499,7 +2499,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type DoctorOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "phone" | "specialty" | "bio" | "imageUrl" | "gender" | "isActive" | "createdAt" | "updatedAt", ExtArgs["result"]["doctor"]>
+  export type DoctorOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "phone" | "speciality" | "bio" | "imageUrl" | "gender" | "isActive" | "createdAt" | "updatedAt", ExtArgs["result"]["doctor"]>
   export type DoctorInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     appointments?: boolean | Doctor$appointmentsArgs<ExtArgs>
     _count?: boolean | DoctorCountOutputTypeDefaultArgs<ExtArgs>
@@ -2517,7 +2517,7 @@ export namespace Prisma {
       name: string
       email: string
       phone: string | null
-      specialty: string
+      speciality: string
       bio: string | null
       imageUrl: string
       gender: $Enums.Gender
@@ -2952,7 +2952,7 @@ export namespace Prisma {
     readonly name: FieldRef<"Doctor", 'String'>
     readonly email: FieldRef<"Doctor", 'String'>
     readonly phone: FieldRef<"Doctor", 'String'>
-    readonly specialty: FieldRef<"Doctor", 'String'>
+    readonly speciality: FieldRef<"Doctor", 'String'>
     readonly bio: FieldRef<"Doctor", 'String'>
     readonly imageUrl: FieldRef<"Doctor", 'String'>
     readonly gender: FieldRef<"Doctor", 'Gender'>
@@ -4600,7 +4600,7 @@ export namespace Prisma {
     name: 'name',
     email: 'email',
     phone: 'phone',
-    specialty: 'specialty',
+    speciality: 'speciality',
     bio: 'bio',
     imageUrl: 'imageUrl',
     gender: 'gender',
@@ -4830,7 +4830,7 @@ export namespace Prisma {
     name?: StringFilter<"Doctor"> | string
     email?: StringFilter<"Doctor"> | string
     phone?: StringNullableFilter<"Doctor"> | string | null
-    specialty?: StringFilter<"Doctor"> | string
+    speciality?: StringFilter<"Doctor"> | string
     bio?: StringNullableFilter<"Doctor"> | string | null
     imageUrl?: StringFilter<"Doctor"> | string
     gender?: EnumGenderFilter<"Doctor"> | $Enums.Gender
@@ -4845,7 +4845,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     phone?: SortOrderInput | SortOrder
-    specialty?: SortOrder
+    speciality?: SortOrder
     bio?: SortOrderInput | SortOrder
     imageUrl?: SortOrder
     gender?: SortOrder
@@ -4863,7 +4863,7 @@ export namespace Prisma {
     NOT?: DoctorWhereInput | DoctorWhereInput[]
     name?: StringFilter<"Doctor"> | string
     phone?: StringNullableFilter<"Doctor"> | string | null
-    specialty?: StringFilter<"Doctor"> | string
+    speciality?: StringFilter<"Doctor"> | string
     bio?: StringNullableFilter<"Doctor"> | string | null
     imageUrl?: StringFilter<"Doctor"> | string
     gender?: EnumGenderFilter<"Doctor"> | $Enums.Gender
@@ -4878,7 +4878,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     phone?: SortOrderInput | SortOrder
-    specialty?: SortOrder
+    speciality?: SortOrder
     bio?: SortOrderInput | SortOrder
     imageUrl?: SortOrder
     gender?: SortOrder
@@ -4898,7 +4898,7 @@ export namespace Prisma {
     name?: StringWithAggregatesFilter<"Doctor"> | string
     email?: StringWithAggregatesFilter<"Doctor"> | string
     phone?: StringNullableWithAggregatesFilter<"Doctor"> | string | null
-    specialty?: StringWithAggregatesFilter<"Doctor"> | string
+    speciality?: StringWithAggregatesFilter<"Doctor"> | string
     bio?: StringNullableWithAggregatesFilter<"Doctor"> | string | null
     imageUrl?: StringWithAggregatesFilter<"Doctor"> | string
     gender?: EnumGenderWithAggregatesFilter<"Doctor"> | $Enums.Gender
@@ -5083,7 +5083,7 @@ export namespace Prisma {
     name: string
     email: string
     phone?: string | null
-    specialty: string
+    speciality: string
     bio?: string | null
     imageUrl: string
     gender: $Enums.Gender
@@ -5098,7 +5098,7 @@ export namespace Prisma {
     name: string
     email: string
     phone?: string | null
-    specialty: string
+    speciality: string
     bio?: string | null
     imageUrl: string
     gender: $Enums.Gender
@@ -5113,7 +5113,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phone?: NullableStringFieldUpdateOperationsInput | string | null
-    specialty?: StringFieldUpdateOperationsInput | string
+    speciality?: StringFieldUpdateOperationsInput | string
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -5128,7 +5128,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phone?: NullableStringFieldUpdateOperationsInput | string | null
-    specialty?: StringFieldUpdateOperationsInput | string
+    speciality?: StringFieldUpdateOperationsInput | string
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -5143,7 +5143,7 @@ export namespace Prisma {
     name: string
     email: string
     phone?: string | null
-    specialty: string
+    speciality: string
     bio?: string | null
     imageUrl: string
     gender: $Enums.Gender
@@ -5157,7 +5157,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phone?: NullableStringFieldUpdateOperationsInput | string | null
-    specialty?: StringFieldUpdateOperationsInput | string
+    speciality?: StringFieldUpdateOperationsInput | string
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -5171,7 +5171,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phone?: NullableStringFieldUpdateOperationsInput | string | null
-    specialty?: StringFieldUpdateOperationsInput | string
+    speciality?: StringFieldUpdateOperationsInput | string
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -5432,7 +5432,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     phone?: SortOrder
-    specialty?: SortOrder
+    speciality?: SortOrder
     bio?: SortOrder
     imageUrl?: SortOrder
     gender?: SortOrder
@@ -5446,7 +5446,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     phone?: SortOrder
-    specialty?: SortOrder
+    speciality?: SortOrder
     bio?: SortOrder
     imageUrl?: SortOrder
     gender?: SortOrder
@@ -5460,7 +5460,7 @@ export namespace Prisma {
     name?: SortOrder
     email?: SortOrder
     phone?: SortOrder
-    specialty?: SortOrder
+    speciality?: SortOrder
     bio?: SortOrder
     imageUrl?: SortOrder
     gender?: SortOrder
@@ -6071,7 +6071,7 @@ export namespace Prisma {
     name: string
     email: string
     phone?: string | null
-    specialty: string
+    speciality: string
     bio?: string | null
     imageUrl: string
     gender: $Enums.Gender
@@ -6085,7 +6085,7 @@ export namespace Prisma {
     name: string
     email: string
     phone?: string | null
-    specialty: string
+    speciality: string
     bio?: string | null
     imageUrl: string
     gender: $Enums.Gender
@@ -6148,7 +6148,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phone?: NullableStringFieldUpdateOperationsInput | string | null
-    specialty?: StringFieldUpdateOperationsInput | string
+    speciality?: StringFieldUpdateOperationsInput | string
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -6162,7 +6162,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     phone?: NullableStringFieldUpdateOperationsInput | string | null
-    specialty?: StringFieldUpdateOperationsInput | string
+    speciality?: StringFieldUpdateOperationsInput | string
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender

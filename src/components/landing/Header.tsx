@@ -1,7 +1,7 @@
 import Link  from 'next/link'
 import Image from 'next/image'
 import { SignInButton, SignUpButton } from '@clerk/nextjs'
-import { Button } from '../button';
+import { Button } from '@/components/ui/button';
 function Header() {
   return <nav className='fixed top-0 right-0 w-full z-50 px-6 py-2 border-b border-border/50
      bg-background/80 backdrop-blur-md h-16'>
