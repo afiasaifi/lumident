@@ -100,7 +100,7 @@ function DoctorsManagement() {
                                         size="sm"
                                         variant="outline"
                                         className="h-8 px-3"
-                                        onClick={() => handleEditDoctor(doctor)}
+                                        onClick={() => handleEditDoctor({...doctor, phone: doctor.phone ?? ""})}
                                     >
                                         <EditIcon className="size-4 mr-1" />
                                         Edit
