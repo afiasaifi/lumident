@@ -2,12 +2,6 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
-
-@import "tailwindcss";
-
-@custom-variant dark (&:is(.dark *));
-
 :root {
   --background: #f6e6ee;
   --foreground: #5b5b5b;
@@ -116,7 +110,7 @@
   --shadow-2xl: 3px 3px 0px 0px hsl(206.1538 28.0576% 27.2549% / 2.50);
 }
 
-@theme inline {
+:root[data-theme="inline"] {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -171,10 +165,12 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--border);
+    outline-color: var(--ring);
   }
   body {
-    @apply bg-background text-foreground;
+    background: var(--background);
+    color: var(--foreground);
   }
 }
 
@@ -184,4 +180,21 @@
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
+}
+
+@keyframes sound-wave {
+  0%{
+    height: 10%;
+  }
+  50%{
+    height: 100%;
+  }
+  100% {
+    height: 10%;
+  }
+  
+}
+
+.animate-sound-wave {
+  animation: sound-wave 1.2s erase-in-out infinite;
 }

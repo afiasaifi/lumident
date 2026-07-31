@@ -1,5 +1,6 @@
 {
     "emmet.includeLanguages": {
         "typescript": "typescriptreact"
-    }
+    },
+    "editor.tabCompletion": "on"
 }
