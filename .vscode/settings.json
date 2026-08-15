@@ -2,5 +2,8 @@
     "emmet.includeLanguages": {
         "typescript": "typescriptreact"
     },
-    "editor.tabCompletion": "on"
+    "editor.tabCompletion": "on",
+    "editor.snippetSuggestions": "top",
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "emmet.showSuggestionsAsSnippets": true
 }
