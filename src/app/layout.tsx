@@ -43,7 +43,8 @@ export default function RootLayout({
           suppressHydrationWarning
           className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
           >
-          <UserSync />
+          //Todo: use webhooks to sync user 
+          {/* <UserSync /> */}
           <Toaster />
           {children}
         </body>

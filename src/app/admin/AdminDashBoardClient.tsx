@@ -7,6 +7,7 @@ import { SettingsIcon } from "lucide-react";
 import AdminStats from "@/components/admin/AdminStats";
 import DoctorsManagement from "@/components/admin/DoctorsManagement";
 import Navbar from "@/components/NavBar";
+import RecentAppointments from "@/components/admin/RecentAppointments";
 function AdminDashBoardClient() {
   const { user } = useUser();
   const { data: doctors = [], isLoading: doctorsLoading } = useGetDoctors();
@@ -57,6 +58,7 @@ function AdminDashBoardClient() {
           completedAppointments={stats.completedAppointments}
         />
         <DoctorsManagement />
+        <RecentAppointments />
       </div>
     </div>
   )

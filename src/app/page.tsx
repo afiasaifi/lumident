@@ -8,9 +8,15 @@ import Footer from "@/components/landing/Footer";
 import WhatToAsk from "@/components/landing/WhatToAsk";  
 import { redirect } from "next/navigation";
 import { currentUser } from "@clerk/nextjs/server";
-export default async function asyncHome() {
+import { syncUser } from "@/lib/actions/users";
+export default async function Home() {
   const user = await currentUser();
-  if (user) redirect("/dashboard");
+  //sync user then navigate to dashboard page
+  if (user) {
+    await syncUser(); // pass user
+    redirect("/dashboard");
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -20,9 +26,6 @@ export default async function asyncHome() {
       <PricingSection />
       <CTA /> 
       <Footer /> 
-      
-
-      
     </div>
   );
 }
