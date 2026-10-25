@@ -3,7 +3,7 @@
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 import { auth } from "@clerk/nextjs/server";
-import { AppointmentStatus } from "@prisma/client";
+import { AppointmentStatus } from "@/generated";
 
 function transformAppointment(appointment: any) {
   return {
@@ -47,40 +47,65 @@ export async function getAppointments() {
 interface CreateAppointmentInput {
   date: string;
   time: string;
-  type: string;
-  userId: string;
+  reason: string;
   doctorId: string;
+  callerPhone: string;
+  patientName?: string;
+  patientEmail?: string;
 }
 
 export async function createAppointment(input: CreateAppointmentInput) {
-    try{
-        // Basic validation
-        if (!input.date || !input.time || !input.type) {
-            throw new Error("Date, time, and type are required");
-        }
-
-        if (!input.userId || !input.doctorId) {
-            throw new Error("User ID and Doctor ID are required");
-        }
-        // Create appointment
-        const appointment = await prisma.appointment.create({
-        data: {
-            date: input.date,
-            time: input.time,
-            type: input.type,
-            userId: input.userId,
-            doctorId: input.doctorId
-        }
-        });
-
-        // Revalidate dashboard
-        revalidatePath("/admin");
-
-        return appointment;
-    } catch (error: any) {
-        console.error("Error creating appointment:", error);
-        throw new Error("Failed to create appointment");
+  try {
+    if (!input.date || !input.time || !input.reason) {
+      throw new Error("Date, time, and reason are required");
     }
+    if (!input.doctorId || !input.callerPhone) {
+      throw new Error("Doctor and caller phone are required");
+    }
+
+    // Look up an existing user by phone number
+    let user = await prisma.user.findFirst({
+      where: { phone: input.callerPhone },
+    });
+
+    // First-time caller — create a new user
+    if (!user) {
+      if (!input.patientName || !input.patientEmail) {
+        throw new Error(
+          "New caller: name and email are required to create an account",
+        );
+      }
+
+      const [firstName, ...rest] = input.patientName.trim().split(" ");
+      const lastName = rest.join(" ") || null;
+
+      user = await prisma.user.create({
+        data: {
+          clerkId: `voice_${crypto.randomUUID()}`,
+          email: input.patientEmail,
+          firstName,
+          lastName,
+          phone: input.callerPhone,
+        },
+      });
+    }
+
+    const appointment = await prisma.appointment.create({
+      data: {
+        date: new Date(input.date),
+        time: input.time,
+        reason: input.reason,
+        userId: user.id,
+        doctorId: input.doctorId,
+      },
+    });
+
+    revalidatePath("/admin");
+    return appointment;
+  } catch (error: any) {
+    console.error("Error creating appointment:", error);
+    throw new Error("Failed to create appointment");
+  }
 }
 
 export async function getUserAppointments(){

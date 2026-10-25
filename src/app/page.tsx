@@ -9,6 +9,7 @@ import WhatToAsk from "@/components/landing/WhatToAsk";
 import { redirect } from "next/navigation";
 import { currentUser } from "@clerk/nextjs/server";
 import { syncUser } from "@/lib/actions/users";
+export const dynamic = "force-dynamic";
 export default async function Home() {
   const user = await currentUser();
   //sync user then navigate to dashboard page

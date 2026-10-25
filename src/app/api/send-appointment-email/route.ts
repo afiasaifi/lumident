@@ -47,6 +47,10 @@ export async function POST(request: Request){
             { status: 200 }
         )
     } catch (error) {
-        
+        console.error("Unexpected error sending appointment email:", error);
+        return NextResponse.json(
+          { error: "Something went wrong sending the email" },
+          { status: 500 },
+        );
     }
 }

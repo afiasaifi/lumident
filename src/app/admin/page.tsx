@@ -1,7 +1,7 @@
 import { currentUser } from "@clerk/nextjs/server"
 import { redirect } from "next/navigation"
 import AdminDashboardClient from "./AdminDashBoardClient"
-
+export const dynamic = "force-dynamic";
 async function AdminPage() {
     const user = await currentUser()
     //if user is not logged in, redirect to home page

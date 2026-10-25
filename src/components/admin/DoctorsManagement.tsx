@@ -8,7 +8,7 @@ import Image from "next/image";
 import AddDoctorDialog from "./AddDoctorDialog";
 import EditDoctorDialog from "./EditDoctorDialog";
 import { generateAvatar } from "@/lib/utils";
-import {Doctor} from "@prisma/client"
+import { Doctor } from "@/generated";
 function DoctorsManagement() {
     const {data: doctors = []} = useGetDoctors();
 

@@ -25,7 +25,7 @@ function Footer() {
             <h4 className="font-medium mb-3">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="#" className="hover:text-foreground">
+                <a href="#how-it-works" className="hover:text-foreground">
                   How it works
                 </a>
               </li>
@@ -86,7 +86,10 @@ function Footer() {
         </div>
 
         <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; 2024 DentWise. Built for real people with real dental questions.</p>
+          <p>
+            &copy; 2024 DentWise. Built for real people with real dental
+            questions.
+          </p>
         </div>
       </div>
     </footer>

@@ -1,6 +1,6 @@
 import { useUpdateDoctor } from "@/hooks/use-doctors";
 import { formatPhoneNumber } from "@/lib/utils";
-import {Doctor, Gender} from "@prisma/client";
+import { Doctor, Gender } from "@/generated";
 import { useState } from "react";
 import { DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "../ui/dialog";
 import { Dialog } from "../ui/dialog";

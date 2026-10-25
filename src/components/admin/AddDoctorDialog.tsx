@@ -1,5 +1,5 @@
 import { useCreateDoctor } from "@/hooks/use-doctors";
-import { Gender } from "@prisma/client";
+import { Gender } from "@/generated";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useState } from "react";
 import { Label } from "../ui/label";

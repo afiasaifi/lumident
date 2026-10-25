@@ -6,7 +6,7 @@ import {
   getAppointments,
   getBookedTimeslots,
   getUserAppointments,
-  updateAppointmentStatus
+  updateAppointmentStatus,
 } from "@/lib/actions/appointments";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 export function useGetAppointments() {
@@ -35,7 +35,7 @@ export function useBookedTimeSlots(doctorId: string, date: string) {
   return useQuery({
     queryKey: ["getBookedTimeSlots", doctorId, date],
     queryFn: () => getBookedTimeslots(doctorId, date),
-    enabled: !!doctorId && !!date, //if these two arent provided, this fn wont run
+    enabled: !!doctorId && !!date, //if these two aren't provided, this fn wont run
   });
 }
 

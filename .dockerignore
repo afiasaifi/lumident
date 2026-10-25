@@ -1,0 +1,33 @@
+# dependencies
+node_modules
+
+# build output
+.next
+out
+
+# env files — never bake secrets into the image
+.env
+.env*.local
+.env.development
+.env.production
+
+# git
+.git
+.gitignore
+
+# editor/IDE
+.vscode
+
+# misc
+.DS_Store
+*.log
+npm-debug.log*
+
+# docker itself
+Dockerfile
+.dockerignore
+
+# next.js dev artifacts
+.next/cache
+
+src/generated
